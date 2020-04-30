@@ -16,9 +16,5 @@ _global_script_class_icons={
 [application]
 
 config/name="Procedural Walking Demo"
-run/main_scene="res://Demo.tscn"
+run/main_scene="res://Demo Scene (v2)/Demo (v2).tscn"
 config/icon="res://icon.png"
-
-[rendering]
-
-environment/default_environment="res://default_env.tres"

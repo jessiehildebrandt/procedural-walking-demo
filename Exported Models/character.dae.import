@@ -2,12 +2,12 @@
 
 importer="scene"
 type="PackedScene"
-path="res://.import/character (blender IK rig).dae-2210d36c356394dc01a427e56209cf18.scn"
+path="res://.import/character.dae-1a9a01aa042a0cba64033054f89f294f.scn"
 
 [deps]
 
-source_file="res://character (blender IK rig).dae"
-dest_files=[ "res://.import/character (blender IK rig).dae-2210d36c356394dc01a427e56209cf18.scn" ]
+source_file="res://Exported Models/character.dae"
+dest_files=[ "res://.import/character.dae-1a9a01aa042a0cba64033054f89f294f.scn" ]
 
 [params]
 
