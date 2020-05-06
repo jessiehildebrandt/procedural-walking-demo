@@ -16,5 +16,5 @@ _global_script_class_icons={
 [application]
 
 config/name="Procedural Walking Demo"
-run/main_scene="res://Demo Scene (v2)/Demo (v2).tscn"
-config/icon="res://icon.png"
+run/main_scene="res://Demo.tscn"
+config/icon="res://Common Assets/icon.png"
