@@ -42,6 +42,8 @@ func _ready():
 	# Fetch nodes from node paths
 	visual_indicator = get_node(visual_indicator_path)
 
+	DemoController.current_rig.destination_point = self
+
 ##########
 # _input
 # Captures user input

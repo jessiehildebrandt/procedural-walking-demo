@@ -2,12 +2,12 @@
 
 importer="scene"
 type="PackedScene"
-path="res://.import/character (two legs).dae-c17e326ff417a60042a79307992eaba9.scn"
+path="res://.import/character (six legs).dae-1dab2b285a9567e5980e874cb422a908.scn"
 
 [deps]
 
-source_file="res://Exported Models/character (two legs).dae"
-dest_files=[ "res://.import/character (two legs).dae-c17e326ff417a60042a79307992eaba9.scn" ]
+source_file="res://Rigged Characters/Character Models/character (six legs).dae"
+dest_files=[ "res://.import/character (six legs).dae-1dab2b285a9567e5980e874cb422a908.scn" ]
 
 [params]
 

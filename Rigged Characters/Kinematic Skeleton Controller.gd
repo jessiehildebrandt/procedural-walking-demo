@@ -24,11 +24,11 @@ class SkeletonFoot:
 
 # Character Controller Parameters
 
-# destination_point_path: The node toward which the character will move
-export(NodePath) var destination_point_path: NodePath = NodePath()
-
 # walking_speed: The speed at which the character will move forwards
 export(float) var walking_speed: float = 3
+
+# turn_speed: The speed at which the character will rotate
+export(float) var turn_speed: float = 0.01
 
 # character_height: The distance above the ground at which the character will rest
 export(float) var character_height: float = 1.25
@@ -95,6 +95,14 @@ var ground_ray_cast: RayCast = null
 var ragdolled: bool = false
 
 ##########
+# vec3_at_y
+# Modifies the 'y' component of a Vector3
+
+func vec3_at_y(vec: Vector3, y: float) -> Vector3:
+	vec.y = y
+	return vec
+
+##########
 # flatten_vec3
 # Neutralizes the 'y' component of a Vector3
 
@@ -109,9 +117,9 @@ func flatten_vec3(vec: Vector3) -> Vector3:
 func _ready() -> void:
 
 	# Sanity check time!
-	if !destination_point_path:
-		push_error("Destination point NodePath not set!")
-		get_tree().quit()
+	# if !destination_point:
+	# 	push_error("Destination point not set!")
+	# 	get_tree().quit()
 	if !skeleton_path:
 		push_error("Skeleton NodePath not set!")
 		get_tree().quit()
@@ -123,7 +131,7 @@ func _ready() -> void:
 		get_tree().quit()
 
 	# Fetch nodes from node paths
-	destination_point = get_node(destination_point_path)
+	#destination_point = get_node(destination_point_path)
 	skeleton = get_node(skeleton_path)
 
 	# Create a foot group for each group of feet
@@ -193,7 +201,7 @@ func process_stepping(delta) -> void:
 				num_feet_dangling += 1
 
 			# Update where the ray cast node is located (it should be moved out toward the walking direction)
-			foot.ray_cast_node.transform.origin = foot.origin_point_node.transform.origin + Vector3(0, (step_up_height + character_height), 0) + flatten_vec3(global_transform.origin.direction_to(destination_point.global_transform.origin)) * step_distance / 2
+			foot.ray_cast_node.global_transform.origin = foot.origin_point_node.global_transform.origin + Vector3(0, (step_up_height + character_height), 0) + flatten_vec3(global_transform.origin.direction_to(destination_point.global_transform.origin)) * step_distance
 
 			# Move each foot toward its current target
 			var new_target_transform: Transform = foot.ik_controller_node.get_target_transform()
@@ -255,6 +263,12 @@ func process_character_movement(delta) -> void:
 
 	# Move the character toward the destination point
 	move_and_slide(global_transform.origin.direction_to(destination_point.global_transform.origin) * walking_speed)
+
+	# Calculate the target direction for the character to be facing
+	var target_transform = global_transform.looking_at(vec3_at_y(destination_point.global_transform.origin, global_transform.origin.y), Vector3(0, 1, 0))
+
+	# Linearly interpolate the character body's rotation toward the target direction
+	global_transform = global_transform.interpolate_with(target_transform, turn_speed)
 
 ##########
 # _physics_process

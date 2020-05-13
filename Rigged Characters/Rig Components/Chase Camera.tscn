@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Common Assets/Environment.tres" type="Environment" id=1]
+[ext_resource path="res://Rigged Characters/Rig Components/Chase Camera.gd" type="Script" id=2]
+
+
+[node name="Chase Camera" type="Camera"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 13, 5 )
+environment = ExtResource( 1 )
+script = ExtResource( 2 )
+look_at_target_path = NodePath("../Character Rig")

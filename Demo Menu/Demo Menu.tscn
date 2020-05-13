@@ -1,0 +1,97 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Demo Menu/Demo Select Button.gd" type="Script" id=1]
+[ext_resource path="res://Common Assets/icon.png" type="Texture" id=2]
+
+[node name="Scene" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel" type="Panel" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -351.432
+margin_top = -200.0
+margin_right = 348.568
+margin_bottom = 200.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Logo" type="TextureRect" parent="Panel"]
+anchor_left = 0.5
+anchor_top = 0.05
+anchor_right = 0.5
+anchor_bottom = 0.05
+margin_left = -34.6777
+margin_right = 34.6777
+margin_bottom = 70.4915
+texture = ExtResource( 2 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Menu Text" type="Label" parent="Panel"]
+anchor_left = 0.5
+anchor_top = 0.3
+anchor_right = 0.5
+anchor_bottom = 0.3
+margin_left = -108.0
+margin_right = 108.0
+margin_bottom = 14.0
+grow_horizontal = 2
+text = "Procedural Walking Demo | Menu
+
+
+Press 'R' at any time to return to this menu."
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button Container" type="HBoxContainer" parent="Panel"]
+anchor_left = 0.5
+anchor_top = 0.6
+anchor_right = 0.5
+anchor_bottom = 0.6
+margin_left = -168.5
+margin_top = -20.0
+margin_right = 168.5
+margin_bottom = 20.0
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Biped Button" type="Button" parent="Panel/Button Container"]
+margin_right = 92.0
+margin_bottom = 39.0
+text = "Biped Demo"
+script = ExtResource( 1 )
+target_demo_file = "res://Demo Levels/Room Level.tscn"
+target_rig_file = "res://Rigged Characters/Character Rig (Two Legs).tscn"
+
+[node name="Quadruped Button" type="Button" parent="Panel/Button Container"]
+margin_left = 96.0
+margin_right = 222.0
+margin_bottom = 39.0
+text = "Quadruped Demo"
+script = ExtResource( 1 )
+target_demo_file = "res://Demo Levels/Room Level.tscn"
+target_rig_file = "res://Rigged Characters/Character Rig (Four Legs).tscn"
+
+[node name="Hexapod Button" type="Button" parent="Panel/Button Container"]
+margin_left = 226.0
+margin_right = 337.0
+margin_bottom = 39.0
+text = "Hexapod Demo"
+script = ExtResource( 1 )
+target_demo_file = "res://Demo Levels/Room Level.tscn"
+target_rig_file = "res://Rigged Characters/Character Rig (Six Legs).tscn"

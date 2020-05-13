@@ -16,5 +16,14 @@ _global_script_class_icons={
 [application]
 
 config/name="Procedural Walking Demo"
-run/main_scene="res://Demo.tscn"
+run/main_scene="res://Demo Menu/Demo Menu.tscn"
 config/icon="res://Common Assets/icon.png"
+
+[autoload]
+
+DemoController="*res://Demo Controller.gd"
+
+[display]
+
+window/size/width=1280
+window/size/height=720
