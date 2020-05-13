@@ -4,6 +4,12 @@
 
 This project is an example of a simple procedural walking animation system implemented in the [Godot](https://godotengine.org/) game engine.
 
+## Build Downloads (64-bit)
+
+ - [Windows](https://gitlab.com/jessieh/procedural-walking-demo/-/raw/builds/Procedural%20Walking%20Demo%20(Windows).exe)
+ - [Linux](https://gitlab.com/jessieh/procedural-walking-demo/raw/builds/Procedural%20Walking%20Demo%20(Linux).x86_64)
+ - [MacOS](https://gitlab.com/jessieh/procedural-walking-demo/raw/builds/Procedural%20Walking%20Demo%20(MacOS).zip)
+
 ## Project Media
 
  - [Demo Video (MP4)](https://gitlab.com/jessieh/procedural-walking-demo/raw/assets/Video/Procedural%20Walking%20Demo.mp4)
